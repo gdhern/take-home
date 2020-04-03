@@ -9,7 +9,7 @@ export default class Homepage extends Component{
 
   updateSize = () => {
     const value = document.getElementById("size").value;
-    
+
     if (!value){
       return;
     }
@@ -17,7 +17,6 @@ export default class Homepage extends Component{
     //Not used onChange with input to prevent issues 
     //when erasing the input value.
     this.setState({size: value})
-    console.log("value", value)
   }
 
   render(){
