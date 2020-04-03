@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import UserInputContainer from '../containers/UserInputContainer';
+import DisplayBoardContainer from '../containers/DisplayBoardContainer';
 
 export default class Homepage extends Component{
   //Added the state here to share with the input and display components
@@ -10,7 +11,7 @@ export default class Homepage extends Component{
   updateSize = () => {
     const value = document.getElementById("size").value;
 
-    if (!value){
+    if (!value || value < 2){
       return;
     }
     //Update to the size passed in
@@ -26,6 +27,9 @@ export default class Homepage extends Component{
         <UserInputContainer
           size={this.state.size}
           updateSize={this.updateSize}
+        />
+        <DisplayBoardContainer
+          size={this.state.size}
         />
       </div>
     )
